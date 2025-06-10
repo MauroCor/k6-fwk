@@ -8,7 +8,7 @@ export const options = {
     stages: [
         { duration: '10s', target: 5 },
         { duration: '5s', target: 1 },
-    ],
+    ]
 };
 
 export function getUsersApi() {

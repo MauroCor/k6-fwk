@@ -2,7 +2,10 @@ import { options as userOptions, getUsersApi } from '../apis/getUsersApi.js';
 
 export const options = {
     scenarios: {
-        get_users: { ...userOptions, exec: 'getUsersApi' }, //  operador spread: copia todas las propiedades
+        get_users: {
+            ...userOptions, //  operador spread: copia todas las propiedades
+            exec: 'getUsersApi'
+        }
     },
     thresholds: {
         'http_req_duration': ['p(95)<500'],

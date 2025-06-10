@@ -3,7 +3,10 @@ import { login } from '../utils/login.js';
 
 export const options = {
     scenarios: {
-        create_user: { ...createUserOptions, exec: 'createUserApi' },
+        create_user: { 
+            ...createUserOptions, 
+            exec: 'createUserApi' 
+        }
     },
     thresholds: {
         'http_req_duration': ['p(95)<500'],
