@@ -1,6 +1,6 @@
-import { getUsersApi } from '../apis/getUsersApi.js';
-import { options as createUserOptions, createUserApi } from '../apis/createUserApi.js';
-import { login } from '../utils/login.js';
+import { options as createUserOptions, createUserApi } from '../../apis/reqres/createUserApi.js';
+import { getUsersApi } from '../../apis/reqres/getUsersApi.js';
+import { loginReqres } from '../../utils/reqresUtils.js';
 
 export const options = {
     scenarios: {
@@ -27,7 +27,7 @@ export const options = {
 
 
 export function setup() {
-    const token = login();
+    const token = loginReqres();
     console.log("LOGIN");
     return { token };
 }

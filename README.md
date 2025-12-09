@@ -13,14 +13,23 @@ sudo apt update && sudo apt install -y k6
 
 ### Windows (Chocolatey)
 ```powershell
-choco install k6
+choco install k6 -y
 ```
-_Opcional: Descarga binarios desde https://k6.io/docs/getting-started/installation/_
+Si choco no se reconoce en PowerShell, puede ser que Chocolatey no esté instalado o que no esté en el PATH. Prueba lo siguiente:
+
+```bash
+Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
+```
+
+Luego volver a ejecutar:
+```bash
+choco install k6 -y
+```
 
 ## 2. k6 Cloud Login
 ```bash
 # Obtener API Token desde app.k6.io → Settings → API Tokens
-k6 login cloud --token <YOUR_API_TOKEN>
+k6 cloud login --token <YOUR_API_TOKEN>
 ```
 
 ## 3. Ejecutar Tests
